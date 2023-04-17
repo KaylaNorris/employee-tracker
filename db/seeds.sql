@@ -18,12 +18,12 @@ VALUES ("Chief Marketing Officer", 250000, 1),
        ("Service Desk Analyst", 65000, 5);
 
 INSERT INTO employees (first_name, last_name, role_id, manager_id)
-VALUES ("Joe", "Dirt", 1, 1),
-       ("Mike", "Jones", 2, 1),
+VALUES ("Joe", "Dirt", 1, NULL),
+       ("Mike", "Jones", 2, NULL),
        ("Danny", "Glover", 3, 1),
        ("Regina", "George", 4, 2),
        ("Alexandra", "Deem", 5, 3),
-       ("John", "Doe", 6, 4),
+       ("John", "Doe", 6, NULL),
        ("Lauryn", "Hill", 7, 4),
        ("Jackson", "Norris", 8, 5),
        ("Nikita", "Anderson", 9, 5);

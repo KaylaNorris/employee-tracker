@@ -31,7 +31,7 @@ To get started:
 Once you have the previous steps completed, open the folder in your terminal and run the "node server" command to begin the prompts. Select whichever actions you need to perform from the list.The view all options may be used to reference the different ID's if needed. 
 
 ## Prompts Screenshot
-![Screenshot 1](Develop/images/employee-tracker-screenshot1.png)
+![Screenshot 1](images/employee-tracker-screenshot1.png)
 ## Demonstration Video
 [Click here to view video!](https://www.youtube.com/watch?v=Y_HPaRmcfLo)
 

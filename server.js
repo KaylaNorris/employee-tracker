@@ -86,19 +86,19 @@ function viewAllEmployees() {
     });
 }
 
-function addDepartment() {
+function addDepartment(name) {
     inquirer
         .prompt([
             {
                 type: 'input',
-                name: 'depName',
+                name: 'department_name',
                 message: 'What is the name of the department?'
             }
         ])
         .then(answer => {
             db.query(
-                'INSERT INTO departments',
-                { name: answer.depName },
+                'INSERT INTO departments SET ?',
+                { department_name: name || answer.department_name },
                 (err, results) => {
                     if (err) throw err;
                     console.log(`Department successfully added!`);
@@ -167,7 +167,8 @@ function addEmployee() {
                 choices: [1,2,3,4,5]
             }
         ])
-        .then(answer => {
+        .then(answers => {
+            const { first_name, last_name, role_id, manager_id } = answers;
             db.query(
                 'INSERT INTO employees SET ?',
                 {
@@ -189,7 +190,7 @@ function updateEmployee() {
         .prompt([
             {
                 type: 'input',
-                name: 'employee_id',
+                name: 'id',
                 message: 'What is the employee ID to update?'
             },
             {
@@ -200,11 +201,11 @@ function updateEmployee() {
             }
         ])
         .then(answers => {
-            const { employee_id, role_id } = answers;
+            const { id, new_role_id } = answers;
 
             db.query(
-                'INSERT INTO employees SET role_id = ? WHERE employee_id = ?',
-                [new_role_id, employee_id],
+                'UPDATE employees SET role_id = ? WHERE id = ?',
+                [new_role_id, id],
                 (err, results) => {
                     if (err) throw err;
                     console.log(`Employee successfully updated!`);

@@ -19,6 +19,7 @@ To use this application you will need to have installed VS Code (or a similar co
 
 To get started: 
 - Clone the readme-generator repository by copying the link under the green code button on GitHub and running "git clone " in the terminal
+- Create a .env file or put your credentials in the server.js file
 - Then run the "npm init" command
 - Then run "npm install" 
 - Then run "npm i mysql2"
